@@ -10,7 +10,7 @@
     
     
     
-    <title>newpapername | Hexo</title>
+    <title>怎么禁止浮层div底层的div滑动 | 骑着猪看海的blog</title>
     <link href="”http://yoursite.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -58,6 +58,24 @@
 </section>
     <!-- 欧尼酱功能, 谁用谁知道 -->
     
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://yoursite.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
         <div class="navbar-header">
@@ -77,7 +95,7 @@
                     }
                 </style>
                 <!-- 这里使用文字(navbar_text or config.title) -->
-                <div class="navbar-brand">Hexo</div>
+                <div class="navbar-brand">骑着猪看海的blog</div>
                 
             </a>
         </div>
@@ -102,20 +120,46 @@
                 
                 
                 
-                <li class>
-                    <a href="/categories">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/前端/">前端</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
                 
                 
-                <li class>
-                    <a href="/tags">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/html/">html</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
@@ -140,21 +184,30 @@
 <article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
-        <a href="http://yoursite.com">Hexo</a>
+        <a href="http://yoursite.com">骑着猪看海的blog</a>
         >
-        <span>newpapername</span>
+        <span>怎么禁止浮层div底层的div滑动</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/05/05/newpapername/">newpapername</a>
+                <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/">怎么禁止浮层div底层的div滑动</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-05-05
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/css/">css</a>, 
+                
+                <a href="/tags/html/">html</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-05-07
             </span>
             
         </div>
@@ -164,20 +217,30 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/05/05/newpapername/">newpapername</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/">怎么禁止浮层div底层的div滑动</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-05-05
+                <i class="fa fa-calendar"></i> 2019-05-07
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/css/">css</a>, 
+                
+                <a href="/tags/html/">html</a>
+                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>哈哈哈。这是一个好玩的例子</p>
+        <h4 id="最近做了一个包含浮层的客户端h5页面。但是发现当浮层显示以后-底部的页面-div-还是可以滚动。"><a href="#最近做了一个包含浮层的客户端h5页面。但是发现当浮层显示以后-底部的页面-div-还是可以滚动。" class="headerlink" title="最近做了一个包含浮层的客户端h5页面。但是发现当浮层显示以后 底部的页面(div)还是可以滚动。"></a>最近做了一个包含浮层的客户端h5页面。但是发现当浮层显示以后 底部的页面(div)还是可以滚动。</h4><p>解决方案： 给浮层的div <label style="color:red">@touchmove.prevent</label>添加即可  </p>
+<p>备注：尝试发现改方法无法屏蔽鼠标的滚轮 鼠标的滚轮滚动需使用<label style="color:red">@scroll.prevent</label>即可</p>
+<p>参考伪代码：（vue）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">"showAlert"</span> <span class="attr">class</span>=<span class="string">"supernatantAll"</span> @<span class="attr">touchmove.prevent</span>&gt;</span>&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"supernatant"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"supClose"</span> <span class="attr">src</span>=<span class="string">"../../assets/sup_close_icon.png"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
 </article>
@@ -237,19 +300,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/05/newpapername/">newpapername</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/30/post-title-with-whitespace/">post title with whitespace</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/30/test/">Hello World</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/">怎么禁止浮层div底层的div滑动</a>
                 </span>
             </li>
             
@@ -271,19 +322,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/30/test/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/05/newpapername/">newpapername</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/30/post-title-with-whitespace/">post title with whitespace</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/">怎么禁止浮层div底层的div滑动</a>
                 </span>
             </li>
             
@@ -298,23 +337,27 @@
 
                 
                 <li>
-                    <a href="/2019/05/05/newpapername/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/05/05/newpapername/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/05/05/newpapername/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/05/07/怎么禁止浮层div底层的div滑动/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
             <div class="tab-content">
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/css/" style="font-size: 13.53787037940769px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/html/" style="font-size: 16.156034357908133px;" class="tag-cloud-link">html</a>
     
 </div>
                 
@@ -339,15 +382,11 @@
                 <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
     
     <li>
-        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+        <a href="http://bbs.cnblackhat.com/" target="_blank">中国黑帽</a>
     </li>
     
     <li>
         <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
-    </li>
-    
-    <li>
-        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
     </li>
     
 </div>
@@ -420,6 +459,8 @@
 </script>
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
 
 
 
