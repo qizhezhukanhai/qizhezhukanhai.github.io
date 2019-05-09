@@ -25,10 +25,14 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -488,7 +492,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                     最近要实现html中调起手机的相册上传图片功能。结果发现IOS可以正常调起来。android不行。经检验需要在原生代码中进行处理
 如图
 参考代码java代码
-1
+
+
                                 
                             </div>
                             <div class="publish-info">
@@ -545,7 +550,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 
                                     如图效果
 参考代码java代码
-1234567891011121314151617181920212223242526272829303132333435363
+
+public class MainActivity extends AppCompatActivity {
+
+    priv
                                 
                             </div>
                             <div class="publish-info">
@@ -765,6 +773,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <a href="https://hexo.io/" target="_blank">Hexo</a> 的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">1.9k</span>
             
 
             
