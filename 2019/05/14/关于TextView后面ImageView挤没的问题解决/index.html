@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Storyboard跳转与传值, 骑着猪看海的blog">
-    <meta name="description" content="最近学习了一下使用Storyboard实现页面跳转已经传值 总结一下
-Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
-打开Main.storyboard文件 添加Navigation Controller
-
-在">
+    <meta name="keywords" content="关于TextView后面ImageView挤没的问题解决, 骑着猪看海的blog">
+    <meta name="description" content="希望实现如下的两种效果
+1当TextView内的文字不超过屏幕宽度 ImageView跟在TextView后面
+2当TextView内的文字超过屏幕宽度 ImageView要显示出来，TextView中的文字结尾省略
+直接上代码， 合理利用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Storyboard跳转与传值 | 骑着猪看海的blog</title>
+    <title>关于TextView后面ImageView挤没的问题解决 | 骑着猪看海的blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +282,13 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Storyboard跳转与传值
+                        关于TextView后面ImageView挤没的问题解决
                     </div>
                 </div>
             </div>
@@ -379,13 +378,9 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Storyboard/" target="_blank">
-                                <span class="chip bg-color">Storyboard</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -393,8 +388,8 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ios/" class="post-category" target="_blank">
-                                ios
+                            <a href="/categories/安卓/" class="post-category" target="_blank">
+                                安卓
                             </a>
                         
                     </div>
@@ -405,21 +400,21 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-05-10
+                    2019-05-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        589
+                        161
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        2 Min
+                        1 Min
                     </div>
                     
                 
@@ -435,87 +430,39 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学习了一下使用Storyboard实现页面跳转已经传值 总结一下</p>
-<h3 id="Storyboard跳转"><a href="#Storyboard跳转" class="headerlink" title="Storyboard跳转"></a>Storyboard跳转</h3><h4 id="1单纯的Storyboard页面跳转"><a href="#1单纯的Storyboard页面跳转" class="headerlink" title="1单纯的Storyboard页面跳转"></a>1单纯的Storyboard页面跳转</h4><p>新建项目 如图：<br><img src="/2019/05/10/Storyboard跳转与传值/1.png" alt="图片"></p>
-<p>打开Main.storyboard文件 添加Navigation Controller</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/2.png" alt="图片"></p>
-<p>在Main.Storyboard新建一个View Controller</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/3.png" alt="图片"></p>
-<p>在现有的两个 Controller 中添加button 和label 并且右键button连线要跳转的Controller 如图:</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/4.png" alt="图片"></p>
-<p>选择push<br><img src="/2019/05/10/Storyboard跳转与传值/5.png" alt="图片"></p>
-<p>这时候两个Controller中间会出现连线<br><img src="/2019/05/10/Storyboard跳转与传值/6.png" alt="图片"></p>
-<p>运行查看效果<br><img src="/2019/05/10/Storyboard跳转与传值/QQ20190510-163623-HD.gif" alt="图片"></p>
-<h4 id="2配合代码跳转"><a href="#2配合代码跳转" class="headerlink" title="2配合代码跳转"></a>2配合代码跳转</h4><p>同样 新建项目<br>添加Navigation Controller<br>Main.Storyboard新建一个View Controller<br>添加button 和label 但不连线<br>(这里略过)</p>
-<p>新建一个TestViewController 继承UIViewController</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/7.png" alt="图片"></p>
-<p>将带按钮的Controller Class设置为TestViewController</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/8.png" alt="图片"></p>
-<p>将两个页面连线。注意。这里不是按钮连线 是页面的连线</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/9.png" alt="图片"></p>
-<p>选择push<br><img src="/2019/05/10/Storyboard跳转与传值/10.png" alt="图片"></p>
-<p>选择生成的连线设置 Identifier为page2_id，代码部分会用到<br><img src="/2019/05/10/Storyboard跳转与传值/13.png" alt="图片"></p>
-<p>button 连线点击方法<br><img src="/2019/05/10/Storyboard跳转与传值/11.png" alt="图片"></p>
-<p>在button的点击方法中 根据设置好的 Identifier 进行跳转<br><img src="/2019/05/10/Storyboard跳转与传值/12.png" alt="图片"></p>
-<p>一样可以实现页面的跳转</p>
-<h3 id="Storyboard传值"><a href="#Storyboard传值" class="headerlink" title="Storyboard传值"></a>Storyboard传值</h3><h4 id="1利用prepareForSegue方法跳转传值"><a href="#1利用prepareForSegue方法跳转传值" class="headerlink" title="1利用prepareForSegue方法跳转传值"></a>1利用prepareForSegue方法跳转传值</h4><p>首页请在前文 配合代码跳转 实现的基础上进行操作</p>
-<p>这时候文件结构 和Main.storyboard结构如下<br><img src="/2019/05/10/Storyboard跳转与传值/14.png" alt="图片"></p>
-<p>点击页面之间的连线 修改Identifier为sendContent<br><img src="/2019/05/10/Storyboard跳转与传值/15.png" alt="图片"></p>
-<p>并且修改按钮点击方法中的代码 identifier为sendContent</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/16.png" alt="图片"></p>
-<p>在第一个页面对应的Controller中添加(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 方法 并根据设置的identifier进行判断传值即可。注意。这里不用重复写跳转代码了。因为按钮的的点击事件中写了<br><img src="/2019/05/10/Storyboard跳转与传值/16.png" alt="图片"></p>
-<pre class=" language-objectivec"><code class="language-objectivec"><span class="token operator">-</span> <span class="token punctuation">(</span>IBAction<span class="token punctuation">)</span>goAction<span class="token punctuation">:</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>sender <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span><span class="token keyword">self</span> performSegueWithIdentifier<span class="token punctuation">:</span><span class="token string">@"sendContent"</span> sender<span class="token punctuation">:</span><span class="token keyword">self</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+                <p>希望实现如下的两种效果</p>
+<h4 id="1当TextView内的文字不超过屏幕宽度-ImageView跟在TextView后面"><a href="#1当TextView内的文字不超过屏幕宽度-ImageView跟在TextView后面" class="headerlink" title="1当TextView内的文字不超过屏幕宽度 ImageView跟在TextView后面"></a>1当TextView内的文字不超过屏幕宽度 ImageView跟在TextView后面</h4><p><img src="/2019/05/14/关于TextView后面ImageView挤没的问题解决/1.png"></p>
+<h4 id="2当TextView内的文字超过屏幕宽度-ImageView要显示出来，TextView中的文字结尾省略"><a href="#2当TextView内的文字超过屏幕宽度-ImageView要显示出来，TextView中的文字结尾省略" class="headerlink" title="2当TextView内的文字超过屏幕宽度 ImageView要显示出来，TextView中的文字结尾省略"></a>2当TextView内的文字超过屏幕宽度 ImageView要显示出来，TextView中的文字结尾省略</h4><p><img src="/2019/05/14/关于TextView后面ImageView挤没的问题解决/2.png"></p>
+<p>直接上代码， 合理利用layout_weight属性即可实现</p>
+<h4 id="layout代码"><a href="#layout代码" class="headerlink" title="layout代码"></a>layout代码</h4><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> 
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fill_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>prepareForSegue<span class="token punctuation">:</span><span class="token punctuation">(</span>UIStoryboardSegue <span class="token operator">*</span><span class="token punctuation">)</span>segue sender<span class="token punctuation">:</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>sender <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">[</span>segue<span class="token punctuation">.</span>identifier isEqualToString<span class="token punctuation">:</span><span class="token string">@"sendContent"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        TestViewController <span class="token operator">*</span>controller <span class="token operator">=</span> segue<span class="token punctuation">.</span>destinationViewController<span class="token punctuation">;</span>
-        controller<span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token string">@"菠菜"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>TestViewController 中 定义变量接收。打出log验证即可</p>
-<pre class=" language-objectivec"><code class="language-objectivec">
-<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLoad <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLoad<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// Do any additional setup after loading the view.</span>
-
-    <span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@"name = %@ "</span><span class="token punctuation">,</span><span class="token keyword">self</span><span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>horizontal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_weight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>singleLine</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>14.0dip<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>123123123<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_marginRight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5dip<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>textColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/font_black<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>15dip<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>15dip<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/bg_blue2<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
 
 </code></pre>
-<p>效果如图：<br><img src="/2019/05/10/Storyboard跳转与传值/xxxx.gif" alt="图片"></p>
-<h4 id="2利用Storyboard-Id跳转传值"><a href="#2利用Storyboard-Id跳转传值" class="headerlink" title="2利用Storyboard Id跳转传值"></a>2利用Storyboard Id跳转传值</h4><p>参考前文内容 新建项目。新建两个Controller<br>Main.storyboard 中  添加Navigation Controller 设置对应的class 但是不进行连线<br>效果如图：</p>
-<p><img src="/2019/05/10/Storyboard跳转与传值/18.png" alt="图片"></p>
-<p>设置要跳向的页面TestViewController 的Storyboard Id为 IdTest<br><img src="/2019/05/10/Storyboard跳转与传值/18.png" alt="图片"></p>
-<p>给ViewController中的按钮绑定点击方法。直接利用 storyboard Id获取controller进行push跳转 并传值</p>
-<pre class=" language-objectivec"><code class="language-objectivec">
-<span class="token keyword">@interface</span> <span class="token function">ViewController</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">@end</span>
-
-<span class="token keyword">@implementation</span> ViewController
-
-<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLoad <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLoad<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// Do any additional setup after loading the view, typically from a nib.</span>
-<span class="token punctuation">}</span>
-
-<span class="token operator">-</span> <span class="token punctuation">(</span>IBAction<span class="token punctuation">)</span>action<span class="token punctuation">:</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>sender <span class="token punctuation">{</span>
-
-    UIStoryboard <span class="token operator">*</span>storyboard <span class="token operator">=</span> <span class="token punctuation">[</span>UIStoryboard storyboardWithName<span class="token punctuation">:</span><span class="token string">@"Main"</span> bundle<span class="token punctuation">:</span>nil<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-    TestViewController <span class="token operator">*</span>controller <span class="token operator">=</span> <span class="token punctuation">[</span>storyboard instantiateViewControllerWithIdentifier<span class="token punctuation">:</span><span class="token string">@"IdTest"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    controller<span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token string">@"菠菜"</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>navigationController pushViewController<span class="token punctuation">:</span>controller animated<span class="token punctuation">:</span>YES<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">@end</span>
-
-</code></pre>
-<p>TestViewController中的Log部分不再赘述了。</p>
 
             </div>
             <hr>
@@ -656,7 +603,7 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
                     </span>
                     <a href="https://qizhezhukanhai.github.io" class="b-link-green">骑着猪看海的blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/05/10/Storyboard跳转与传值/" class="b-link-green">Storyboard跳转与传值</a>
+                    <a href="/2019/05/14/关于TextView后面ImageView挤没的问题解决/" class="b-link-green">关于TextView后面ImageView挤没的问题解决</a>
                 </p>
             </div>
         </div>
@@ -679,7 +626,8 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/05/14/关于TextView后面ImageView挤没的问题解决/">
                     <div class="card-image">
@@ -696,45 +644,8 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
 2当TextView内的文字超过屏幕宽度 ImageView要显示出来，TextView中的文字结尾省略
 直接上代码， 合理利用</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/安卓/" class="post-category" target="_blank">
-                                    安卓
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/05/09/Android获取唯一设备ID解决方案/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Android获取唯一设备ID解决方案">
-                        
-                        <span class="card-title">Android获取唯一设备ID解决方案</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">Android 获取唯一设备ID的方法挺多。但是都不完美，要不就是有的会随着恢复出厂设置改变。要不就是不是唯一，再或者取不到。这里把Android_id,SerialNumber和UniquePsuedoID结合在一起写了一个工具类。暂未发</div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
                             </span>
                         <span class="publish-author">
                             
@@ -748,11 +659,53 @@ Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/05/10/Storyboard跳转与传值/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Storyboard跳转与传值">
+                        
+                        <span class="card-title">Storyboard跳转与传值</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">最近学习了一下使用Storyboard实现页面跳转已经传值 总结一下
+Storyboard跳转1单纯的Storyboard页面跳转新建项目 如图：
+打开Main.storyboard文件 添加Navigation Controller
+
+在</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ios/" class="post-category" target="_blank">
+                                    ios
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/utils/" target="_blank">
-                        <span class="chip bg-color">utils</span>
+                    <a href="/tags/Storyboard/" target="_blank">
+                        <span class="chip bg-color">Storyboard</span>
                     </a>
                     
                 </div>
