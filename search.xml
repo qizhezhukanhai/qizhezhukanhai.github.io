@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>jar包冲突的解决方法</title>
+      <link href="/2019/05/29/jar%E5%8C%85%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/05/29/jar%E5%8C%85%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-当自己项目引用的jar-aar-重复的时候，直接删除期中一个jar包就行"><a href="#1-当自己项目引用的jar-aar-重复的时候，直接删除期中一个jar包就行" class="headerlink" title="1.当自己项目引用的jar(aar) 重复的时候，直接删除期中一个jar包就行"></a>1.当自己项目引用的jar(aar) 重复的时候，直接删除期中一个jar包就行</h3><h3 id="2-当自己项目引用的jar-aar-和某个三方lib项目冲突的时候。这时候也可以去掉自己项目中jar-aar-从三方项目中直接使用jar-aar-包的功能"><a href="#2-当自己项目引用的jar-aar-和某个三方lib项目冲突的时候。这时候也可以去掉自己项目中jar-aar-从三方项目中直接使用jar-aar-包的功能" class="headerlink" title="2.当自己项目引用的jar(aar) 和某个三方lib项目冲突的时候。这时候也可以去掉自己项目中jar(aar) 从三方项目中直接使用jar(aar)包的功能"></a>2.当自己项目引用的jar(aar) 和某个三方lib项目冲突的时候。这时候也可以去掉自己项目中jar(aar) 从三方项目中直接使用jar(aar)包的功能</h3><h3 id="3-当自己项目引用的jar-aar-是通过maven仓库管理引入并且冲突的三方lib也是通过maven仓库管理引入的时候。可利用exclude语法进行剔除。"><a href="#3-当自己项目引用的jar-aar-是通过maven仓库管理引入并且冲突的三方lib也是通过maven仓库管理引入的时候。可利用exclude语法进行剔除。" class="headerlink" title="3.当自己项目引用的jar(aar) 是通过maven仓库管理引入并且冲突的三方lib也是通过maven仓库管理引入的时候。可利用exclude语法进行剔除。"></a>3.当自己项目引用的jar(aar) 是通过maven仓库管理引入并且冲突的三方lib也是通过maven仓库管理引入的时候。可利用exclude语法进行剔除。</h3><p>详情:</p><p>引入的第三方为test 冲突的jar(aar)库是chongtutest </p><pre class=" language-java"><code class="language-java">    implementation <span class="token string">'com.xxx.xxx.xxx:chongtutest:1.0.1'</span>    <span class="token function">implementation</span> <span class="token punctuation">(</span><span class="token string">'com.bocai.android.sdk:test:1.0.24'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        exclude group<span class="token operator">:</span> <span class="token string">'com.xxx.xxx.xxx'</span><span class="token punctuation">,</span> module<span class="token operator">:</span> <span class="token string">'chongtutest'</span>    <span class="token punctuation">}</span></code></pre><p>注意：exclude 只能用于剔除maven仓库引入的第三方 无法剔除三方项目中libs方式直接引入jar(aar)包</p><h3 id="4-当自己项目引用的jar-aar-和多个三方lib项目冲突的时候。并且冲突的jar都是采用libs目录直接引用的。这时候只去掉本地的jar-aar-引用就没有意义了。这个时候又分为两种情况："><a href="#4-当自己项目引用的jar-aar-和多个三方lib项目冲突的时候。并且冲突的jar都是采用libs目录直接引用的。这时候只去掉本地的jar-aar-引用就没有意义了。这个时候又分为两种情况：" class="headerlink" title="4.当自己项目引用的jar(aar) 和多个三方lib项目冲突的时候。并且冲突的jar都是采用libs目录直接引用的。这时候只去掉本地的jar(aar)引用就没有意义了。这个时候又分为两种情况："></a>4.当自己项目引用的jar(aar) 和多个三方lib项目冲突的时候。并且冲突的jar都是采用libs目录直接引用的。这时候只去掉本地的jar(aar)引用就没有意义了。这个时候又分为两种情况：</h3><h4 id="1-当对应的第三方lib项目是自己封装的，可以进行修改的情况下-通过complieOnly避免编译时打包进去。具体如下："><a href="#1-当对应的第三方lib项目是自己封装的，可以进行修改的情况下-通过complieOnly避免编译时打包进去。具体如下：" class="headerlink" title="1)当对应的第三方lib项目是自己封装的，可以进行修改的情况下:通过complieOnly避免编译时打包进去。具体如下："></a>1)当对应的第三方lib项目是自己封装的，可以进行修改的情况下:通过complieOnly避免编译时打包进去。具体如下：</h4><pre class=" language-java"><code class="language-java">    compileOnly <span class="token function">files</span><span class="token punctuation">(</span><span class="token string">'libs/chongtutest.jar'</span><span class="token punctuation">)</span></code></pre><h4 id="2-当对应的第三方lib项目无法进行修改的情况下-可以采用对jar包解压重新打包来去除掉冲突的包-另外推荐一个三方工具：ExcludeAar"><a href="#2-当对应的第三方lib项目无法进行修改的情况下-可以采用对jar包解压重新打包来去除掉冲突的包-另外推荐一个三方工具：ExcludeAar" class="headerlink" title="2)当对应的第三方lib项目无法进行修改的情况下:可以采用对jar包解压重新打包来去除掉冲突的包 另外推荐一个三方工具：ExcludeAar"></a>2)当对应的第三方lib项目无法进行修改的情况下:可以采用对jar包解压重新打包来去除掉冲突的包 另外推荐一个三方工具：ExcludeAar</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安卓 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>总结ios传值的方法</title>
+      <link href="/2019/05/17/%E6%80%BB%E7%BB%93ios%E4%BC%A0%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/05/17/%E6%80%BB%E7%BB%93ios%E4%BC%A0%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Block传值"><a href="#Block传值" class="headerlink" title="Block传值"></a>Block传值</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> ios </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于TextView后面ImageView挤没的问题解决</title>
       <link href="/2019/05/14/%E5%85%B3%E4%BA%8ETextView%E5%90%8E%E9%9D%A2ImageView%E6%8C%A4%E6%B2%A1%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
       <url>/2019/05/14/%E5%85%B3%E4%BA%8ETextView%E5%90%8E%E9%9D%A2ImageView%E6%8C%A4%E6%B2%A1%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
